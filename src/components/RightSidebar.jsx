@@ -172,14 +172,8 @@ const RightSidebar = ({ onClose }) => {
             const details = logEntry.details;
             if (Object.keys(details).length === 0) return null;
 
-            // Only show actual tool parameters - nothing else
-            const filteredDetails = {};
-
-            if (details.parameters && typeof details.parameters === 'object' && details.parameters !== null && Object.keys(details.parameters).length > 0) {
-                filteredDetails.parameters = details.parameters;
-            }
-
-            return Object.keys(filteredDetails).length > 0 ? filteredDetails : null;
+            // Return all details
+            return details;
         }
         return null;
     };

@@ -23,8 +23,8 @@ const App = () => {
   const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
   const [leftSidebarWidth, setLeftSidebarWidth] = useState(320);
   const [rightSidebarWidth, setRightSidebarWidth] = useState(800);
-  // Initialize selectedModel from cookie or use default
-  const [selectedModel, setSelectedModel] = useState('us.anthropic.claude-sonnet-4-20250514-v1:0');
+  // Initialize selectedModel from cookie or use default (Nova Pro)
+  const [selectedModel, setSelectedModel] = useState('us.amazon.nova-pro-v1:0');
   const [tokenCount, setTokenCount] = useState(0);
   const [isResizing, setIsResizing] = useState(null);
   const [currentSessionId, setCurrentSessionId] = useState(null);

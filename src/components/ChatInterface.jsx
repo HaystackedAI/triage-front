@@ -360,11 +360,13 @@ const ChatInterface = ({
 
     try {
       const apiBase = window.location.hostname === 'localhost' ? 'http://localhost:8000' : '';
-      
+
       // Prepare request body with images
+      // Ensure model_id is never empty - default to Nova Pro
+      const modelId = selectedModel || 'us.amazon.nova-pro-v1:0';
       const requestBody = {
         message: messageToSend,
-        model_id: selectedModel,
+        model_id: modelId,
         session_id: sessionId,
         history: messages.filter(m => m.id !== userMessage.id) // Exclude current user message
       };
