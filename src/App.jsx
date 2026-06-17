@@ -22,7 +22,7 @@ const App = () => {
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(true);
   const [rightSidebarOpen, setRightSidebarOpen] = useState(true);
   const [leftSidebarWidth, setLeftSidebarWidth] = useState(320);
-  const [rightSidebarWidth, setRightSidebarWidth] = useState(350);
+  const [rightSidebarWidth, setRightSidebarWidth] = useState(800);
   // Initialize selectedModel from cookie or use default
   const [selectedModel, setSelectedModel] = useState('us.anthropic.claude-sonnet-4-20250514-v1:0');
   const [tokenCount, setTokenCount] = useState(0);
