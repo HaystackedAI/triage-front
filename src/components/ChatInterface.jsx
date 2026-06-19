@@ -310,7 +310,13 @@ const ChatInterface = ({
 
   const sendMessage = async (messageText = null, isQuickResponse = false) => {
     const messageToSend = messageText || inputMessage;
-    
+
+    // Ensure messageToSend is a string
+    if (typeof messageToSend !== 'string') {
+      console.error('Invalid message type:', typeof messageToSend, messageToSend);
+      return;
+    }
+
     if ((!messageToSend.trim() && selectedImages.length === 0) || isLoading) return;
 
     const userMessage = {
@@ -879,7 +885,7 @@ const ChatInterface = ({
             />
             
             <button
-              onClick={isLoading ? stopGeneration : sendMessage}
+              onClick={isLoading ? stopGeneration : () => sendMessage()}
               disabled={!isLoading && !inputMessage.trim() && selectedImages.length === 0}
               className="send-button"
             >
